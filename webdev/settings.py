@@ -11,21 +11,25 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static'] 
+STATIC_ROOT = BASE_DIR / 'staticfiles' 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z07q4hft2=er4+9%f8=erax!*(dn-$r+lf1%*x_u#-+7!5)uxb'
+SECRET_KEY = 'django-insecure-5ah3trzu*lql^&ztorah@97kv0bd5^4*c-*41w6*rdrn$95u8o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['RPrates16.pythonanywhere.com']
+ALLOWED_HOSTS = ['pedroodake.pythonanywhere.com','127.0.0.1', '127.0.0.1:8000']
 
 
 # Application definition
@@ -37,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+
+    'mycontacts',
 ]
 
 MIDDLEWARE = [
