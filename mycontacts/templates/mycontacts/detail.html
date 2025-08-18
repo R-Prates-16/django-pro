@@ -1,0 +1,17 @@
+{% extends 'mycontacts/background.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-detail">
+    <h1>{{ contact.name }}</h1>
+    <p><b>Relação:</b> {{ contact.relation }}</p>
+    <p><b>Telefone:</b> {{ contact.phone }}</p>
+    <p><b>Email:</b> <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+
+    <div class="actions">
+        <a href="{% url 'edit' contact.id %}">✏️ Editar</a> |
+        <a href="{% url 'delete' contact.id %}">🗑️ Excluir</a> |
+        <a href="{% url 'show' %}">⬅️ Voltar</a>
+    </div>
+</div>
+{% endblock content %}
